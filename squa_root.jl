@@ -6,13 +6,15 @@
 
 function raiz_quad(N, num_max_iter)
     x = N / 2
-    for i in 1:num_max_iter
+    iteracoes = 0
+    while true
+        iteracoes += 1
         x_p = 1 / 2 * (x + N / x)
+        if iteracoes == num_max_iter
+            return x_p
+        end
         x = x_p
-        println(x)
-    end    
+        
+    end
     
 end
-
-
-raiz_quad(144)
