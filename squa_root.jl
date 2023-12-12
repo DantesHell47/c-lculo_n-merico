@@ -5,6 +5,9 @@
 
 
 function raiz_quad(N, num_max_iter)
+    if N < 0
+        throw(DomainError("It's no possible"))
+    end
     x = N / 2
     iteracoes = 0
     while true
@@ -13,8 +16,6 @@ function raiz_quad(N, num_max_iter)
         if iteracoes == num_max_iter
             return x_p
         end
-        x = x_p
-        
-    end
-    
+        x = x_p 
+    end  
 end
