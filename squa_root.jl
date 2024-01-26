@@ -22,12 +22,13 @@ function raiz_quad(n; num_max_iter=100)
     end
     x = n / 2
     iteracoes = 0
-    while true
+    for _ in 1:num_max_iter
         iteracoes += 1
         x_p = 1 / 2 * (x + n / x)
-        iteracoes == num_max_iter || abs(x_p - x) < 1e-8 && return x_p
-
-        x = x_p 
-    end  
+        if iteracoes == num_max_iter || abs(x_p - x) < 1e-8
+            return x_p
+        end
+        x = x_p
+    end
 end
 
